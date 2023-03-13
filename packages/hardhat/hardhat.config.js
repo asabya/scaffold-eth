@@ -66,15 +66,13 @@ module.exports = {
 
   networks: {
     localhost: {
-      url: "http://localhost:8545",
+      url: "http://localhost:9545",
       /*      
         notice no mnemonic here? it will just use account 0 of the hardhat node to deploy
         (you can put in a mnemonic here to set the deployer locally)
       
       */
-      // accounts: {
-      //   mnemonic: mnemonic(),
-      // },
+      accounts: ["4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1d"],
     },
 
     // rinkeby: {

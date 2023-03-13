@@ -15,7 +15,7 @@ contract SwarmMail is Ownable, ReentrancyGuard, AccessControl  {
     }
  
     modifier isRegistered() { 
-        require(users[msg.sender].key != bytes32(0), "User not registred");
+        require(users[msg.sender].key != bytes32(0), "User not registered");
         _;
     }
 
@@ -496,7 +496,6 @@ contract SwarmMail is Ownable, ReentrancyGuard, AccessControl  {
     }    
 
     function bidSub(bytes32 subHash, bytes32 fdpBuyerNameHash) public nonReentrant payable {
-        require(users[msg.sender].key != bytes32(0), "Not reg"); // user can not receive encrypted data
         require(subscriptionIds[subHash] != 0, "No Sub"); // must exists
         Sub storage s = subscriptions[subscriptionIds[subHash] - 1]; 
 
@@ -531,7 +530,7 @@ contract SwarmMail is Ownable, ReentrancyGuard, AccessControl  {
 
     // podAddress, seller.address, buyer.address, encryptedSecret
     
-    // encryptedSecret is podReference encrypited with sharedSecret 
+    // encryptedSecret is podReference encrypted with sharedSecret
     function sellSub(bytes32 requestHash, bytes32 encryptedKeyLocation) public payable {
         User storage seller = users[msg.sender];
         require(seller.subRequestIds[requestHash] != 0, "No Req");
