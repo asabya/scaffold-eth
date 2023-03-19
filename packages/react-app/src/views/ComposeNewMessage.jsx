@@ -9,7 +9,6 @@ import * as EncDec from "./../utils/EncDec.js";
 import { DropzoneReadFileContents } from "./../Swarm/DropzoneReadFileContents";
 import { useEffect } from "react";
 
-
 const { Meta } = Card;
 const { Text } = Typography;
 
